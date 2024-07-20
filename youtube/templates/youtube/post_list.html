@@ -1,4 +1,17 @@
 {% extends 'youtube/base.html' %}
 
 {% block content %}
+
+<div class="row">
+{% for post in post_list %}
+
+    <div class="col-4">
+    <img class="img-thumbnail" src="{{post.thumbnail.url}}" alt="">
+    <p>{{post.title}}</p>
+    </div>
+{% endfor %}
+
+</div>
+
+
 {% endblock %}
