@@ -7,7 +7,7 @@
 
     <div class="col-4">
     <img class="img-thumbnail" src="{{post.thumbnail.url}}" alt="">
-    <p>{{post.title}}</p>
+    <a href="{% url 'youtube:detail' post.pk %}"><p>{{post.title}}</p></a>
     </div>
 {% endfor %}
 

@@ -14,3 +14,7 @@ class CreateView(generic.CreateView):
     
     def __str__(self):
         return self.title
+    
+class DetailView(generic.DetailView):
+    model=Post
+    

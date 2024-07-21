@@ -1,0 +1,6 @@
+{% for post in post_list %}
+
+    <div class="col-12 mb-3">
+    <a href="{% url 'youtube:detail' post.pk %}"><p>{{post.title}}</p></a>
+    </div>
+{% endfor %}

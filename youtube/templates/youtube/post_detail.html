@@ -1,0 +1,23 @@
+{% extends 'youtube/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="col-9">
+        <div class="embed-responsive embed-responsive-16by9">
+            <video controls class="embed-responsive-item" src="{{post.movie.url }}"></video>
+        </div>
+        <h4>{{post.title}}</h4>
+        <p><i class="bi bi-alarm"></i><i class="bi bi-bookmark-dash-fill">a</i>a</p>
+        <p>{{post.created_at}}</p>
+        <p>{{post.text|linebreaksbr}}</p>
+        
+    </div>
+
+    <div class="col-3">
+        <p>おすすめ一覧</p>
+    </div>
+    
+</div>
+
+{% endblock %}
