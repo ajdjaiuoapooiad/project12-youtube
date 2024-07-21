@@ -16,6 +16,21 @@
   
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
+
+      <div class="dropdown mr-3">
+        <button class="btn btn-secondary dropdown-toggle"
+                type="button" id="dropdownMenu1" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+          =
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <a class="dropdown-item" href="#!">Home</a>
+          <a class="dropdown-item" href="#!">マイページ</a>
+          <a class="dropdown-item" href="#!">登録チャンネル</a>
+          <a class="dropdown-item" href="#!">4</a>
+        </div>
+      </div>
+
       <a class="navbar-brand" href="{% url 'youtube:index' %}"><span class="badge badge-dark">Youtube</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
