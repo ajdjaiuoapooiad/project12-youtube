@@ -4,6 +4,7 @@ from .models import Post,Category,Comment
 from django.urls import reverse_lazy
 from .forms import YoutubeCreateForm,CommentCreateForm
 from django.db.models import Q
+import os
 
 class IndexView(generic.ListView):
     model=Post
@@ -31,7 +32,7 @@ class CreateView(generic.CreateView):
     model=Post
     form_class=YoutubeCreateForm
     success_url=reverse_lazy('youtube:index')
-    
+ 
     def __str__(self):
         return self.title
     
