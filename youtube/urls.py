@@ -8,4 +8,5 @@ urlpatterns=[
     path('category/<int:pk>',views.CategoryView.as_view(),name='category'),
     path('create/',views.CreateView.as_view(),name='create'),
     path('detail/<int:pk>',views.DetailView.as_view(),name='detail'),
+    path('comment/<int:post_pk>',views.CommentView.as_view(),name='comment'),
 ]

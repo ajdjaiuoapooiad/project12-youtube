@@ -12,6 +12,18 @@
         <p>{{post.created_at}}</p>
         <p>{{post.text|linebreaksbr}}</p>
         
+        <h4 class="mt-5">コメント一覧</h4>
+        <a class="btn btn-dark mb-5" href="{% url 'youtube:comment' post.pk %}">コメント投稿ページへ</a>
+        {% for comment in post.comment_set.all %}
+        <div class="card ">
+            <div class="card-header bg-dark">
+                <p>{{comment.name}}           {{comment.created_at}}</p>
+            </div>
+            <div class="card-body text-dark">
+              <p class="card-text">{{comment.text|linebreaksbr}}</p>
+            </div>
+          </div>
+        {% endfor%}
     </div>
 
     <div class="col-3">

@@ -19,3 +19,13 @@ class Post(models.Model):
     def __str__(self):
         return self.title
     
+class Comment(models.Model):
+    name=models.CharField('名前',max_length=20,default='名無し')
+    text=models.TextField('本文',max_length=200)
+    post=models.ForeignKey(Post,verbose_name='紐づく動画',on_delete=models.PROTECT)
+    created_at=models.DateTimeField('日付',auto_now_add=True)
+    
+    def __str__(self):
+        return self.name
+    
+    

@@ -1,8 +1,8 @@
 from django.views import generic
-from django.shortcuts import get_object_or_404
-from .models import Post,Category
+from django.shortcuts import get_object_or_404,redirect
+from .models import Post,Category,Comment
 from django.urls import reverse_lazy
-from .forms import YoutubeCreateForm
+from .forms import YoutubeCreateForm,CommentCreateForm
 from django.db.models import Q
 
 class IndexView(generic.ListView):
@@ -38,3 +38,13 @@ class CreateView(generic.CreateView):
 class DetailView(generic.DetailView):
     model=Post
     
+class CommentView(generic.CreateView):
+    model=Comment
+    form_class=CommentCreateForm
+    
+    def form_valid(self,form):
+        post_pk=self.kwargs['post_pk']
+        comment=form.save(commit=False)
+        comment.post=get_object_or_404(Post,pk=post_pk)
+        comment.save()
+        return redirect('youtube:detail',pk=post_pk)
